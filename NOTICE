@@ -1,0 +1,3 @@
+UniAuth Better Auth Bridge
+
+This package maps Better Auth OAuth account data into UniAuth assertions.
