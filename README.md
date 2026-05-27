@@ -1,5 +1,7 @@
 # UniAuth Better Auth Bridge
 
+[![GitHub Packages](https://img.shields.io/static/v1?label=GitHub%20Packages&message=%40alyldas%2Funiauth-better-auth-bridge&color=24292f&logo=github)](https://github.com/users/alyldas/packages/npm/package/uniauth-better-auth-bridge)
+
 `@alyldas/uniauth-better-auth-bridge` maps Better Auth OAuth account and profile data into a UniAuth
 `ProviderIdentityAssertion`.
 
@@ -10,6 +12,14 @@ storage, token refresh, or provider SDK runtime. Use it only after Better Auth h
 the provider response.
 
 ## Install
+
+Configure the GitHub Packages registry for the package scope before installing:
+
+```ini
+@alyldas:registry=https://npm.pkg.github.com
+```
+
+GitHub Packages can require authentication for package reads. Use a token with `read:packages` in local npm config or CI secrets; do not commit tokens.
 
 ```bash
 npm install @alyldas/uniauth-core @alyldas/uniauth-better-auth-bridge
