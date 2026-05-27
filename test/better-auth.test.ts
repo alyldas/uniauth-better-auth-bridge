@@ -170,6 +170,25 @@ describe('Better Auth bridge', () => {
     })
   })
 
+  it('rejects token-shaped metadata fields', async () => {
+    await expect(
+      catchError(() =>
+        mapBetterAuthOAuthToAssertion({
+          account: {
+            providerId: 'google',
+            accountId: 'user-1',
+          },
+          metadata: {
+            refreshToken: 'secret-token',
+          },
+        }),
+      ),
+    ).resolves.toMatchObject({
+      code: UniAuthErrorCode.InvalidInput,
+      message: 'Bridge metadata must not include token or session fields.',
+    })
+  })
+
   it('feeds mapped assertions through the normal sign-in pipeline', async () => {
     const kit = createInMemoryAuthKit()
 
